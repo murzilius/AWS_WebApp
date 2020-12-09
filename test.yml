@@ -1,0 +1,28 @@
+---
+- hosts: all
+  become: yes
+  gather_facts: true
+
+  vars_files:
+    - secrets.yml
+
+  tasks:
+
+
+  # Install packages
+  - name: Install packages
+    apt:
+      name: "{{ item }}"
+      state: present
+      update_cache: yes
+    loop:
+      - openjdk-8-jdk
+      - mc
+      - git
+      - apt-transport-https 
+      - ca-certificates 
+      - curl 
+      - gnupg-agent 
+      - software-properties-common
+    when: ansible_os_family == 'Debian'
+

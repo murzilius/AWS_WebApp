@@ -10,7 +10,7 @@ mkdir /home/ubuntu/${GITHUB_REPO_NAME}
 chmod 777 /home/ubuntu/${GITHUB_REPO_NAME}
 cd /home/ubuntu/${GITHUB_REPO_NAME}/ 
 %{ for EnvVARS_key, EnvVARS_value in EnvVARS }
-echo "export ${EnvVARS_key} = ${EnvVARS_value}" >> /home/ubuntu/${GITHUB_REPO_NAME}/deploy.sh
+echo "export ${EnvVARS_key} = '${EnvVARS_value}'" >> /home/ubuntu/${GITHUB_REPO_NAME}/deploy.sh
 %{ endfor ~}
 echo "ansible-playbook -i hosts test.yml" >> /home/ubuntu/${GITHUB_REPO_NAME}/deploy.sh
 chown -x /home/ubuntu/${GITHUB_REPO_NAME}/deploy.sh
