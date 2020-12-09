@@ -1,6 +1,6 @@
 /db/*
 *lock*
-*.tmpl
+#*.tmpl
 *.tfvars
 *.tfstate
 *.backup
