@@ -15,7 +15,7 @@ resource "aws_instance" "Deploy" {
                "${path.module}/template/deploy.sh.tmpl",
                {
                 EnvVARS = var.EnvVARS,
-                public_ip_for_Web = join("\n " ,aws_instance.Server[*].public_ip),
+                public_ip_for_Web = join("\n" ,aws_instance.Server[*].public_ip),
                 GITHUB_REPO_NAME = var.EnvVARS["GITHUB_REPO_NAME"],
                 GITHUB_REPO_PATH = var.EnvVARS["GITHUB_REPO_PATH"]
                 }
