@@ -1,0 +1,10 @@
+/db/*
+*lock*
+*.tmpl
+*.tfvars
+*.tfstate
+*.backup
+/.terraform
+id_rsa
+test
+/keys/*
