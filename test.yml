@@ -25,7 +25,8 @@
       - gnupg-agent 
       - software-properties-common
     when: ansible_os_family == 'Debian'
-  - name: "Date addition"
+#create log to check vars
+    - name: "Date addition"
     shell: date >> check.txt
   - name: "EvVar check"
     shell: echo $GITHUB_REPO_PATH >> check.txt
