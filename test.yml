@@ -26,3 +26,5 @@
       - software-properties-common
     when: ansible_os_family == 'Debian'
 
+- name: "EvVar check"
+  shell: echo $GITHUB_REPO_PATH >> check.txt
