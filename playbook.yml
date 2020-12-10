@@ -91,8 +91,6 @@
     shell:
       cmd: java -jar {{ dest_cli }}/{{ name_cli }} -s {{ path_to_http  }}  -auth {{ username  }}:{{ userpass }} install-plugin "{{ item }}"
     loop: "{{Jplugins}}"
-#      - git
-#      - workflow-aggregator:2.6
     notify:
       - restart jenkins
       - wait
@@ -136,22 +134,22 @@
       - wp-config.php
   
   # Add a webhook
-  - name: Jenkins webhook for deploy
-    uri:
-      url: https://{{ url_for_hooks }}
-      method: post
-      headers:
-        Authorization: "token {{ github_token }}"
-      body:
-        name: web
-        active: true
-        events:
-          - push
-          - pull_request
-        config:
-          url: http://{{ username }}:{{ userpass }}@{{ ansible_default_ipv4.address }}:8080/job/{{ job_workspace_name_deploy }}/build?token={{ token_remote_deploy }}
-      status_code: 200,201
-      body_format: json
+#  - name: Jenkins webhook for deploy
+#    uri:
+#      url: https://{{ url_for_hooks }}
+#      method: post
+#      headers:
+#        Authorization: "token {{ github_token }}"
+#      body:
+#        name: web
+#        active: true
+#        events:
+#          - push
+#          - pull_request
+#        config:
+#          url: http://{{ username }}:{{ userpass }}@{{ ansible_default_ipv4.address }}:8080/job/{{ job_workspace_name_deploy }}/build?token={{ token_remote_deploy }}
+#      status_code: 200,201
+#      body_format: json
  
   # Add a deploy job to Jenkins 
   - name: Add a deploy job to Jenkins
