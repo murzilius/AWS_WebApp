@@ -18,6 +18,6 @@
       with_items: "{{ packages[*] }}"
 #create log to check vars
   - name: "Date addition"
-    shell: date >> check.txt
+    shell: date >> /home/ubuntu/check.txt
   - name: "EvVar check"
-    shell: echo $GITHUB_REPO_PATH >> check.txt
+    shell: echo $GITHUB_REPO_PATH >> /home/ubuntu/check.txt
