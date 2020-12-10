@@ -12,7 +12,7 @@ resource "aws_instance" "Deploy" {
  
   key_name="AWS_for_test"
   user_data=templatefile(
-               "${path.module}/template/deploy.sh.tmpl",
+               "${path.module}/templates/deploy.sh.tmpl",
                {
                 EnvVARS = var.EnvVARS,
                 public_ip_for_Web = join("\n" ,aws_instance.Server[*].public_ip),

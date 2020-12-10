@@ -15,7 +15,7 @@
       name: "{{ item }}"
       state: present
       update_cache: yes
-      with_items: "{{ packages }}"
+      with_items: "{{ packages[*] }}"
 #create log to check vars
   - name: "Date addition"
     shell: date >> check.txt
