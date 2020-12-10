@@ -79,7 +79,7 @@
   # Install docker-compose
   - name: Install Docker Compose (if configured).
     get_url:
-      url: https://github.com/docker/compose/releases/download/1.25.5/docker-compose-Linux-x86_64
+      url: https://github.com/docker/compose/releases/download/{{ compose_ver}}/docker-compose-Linux-x86_64
       dest: /usr/local/bin/docker-compose
       mode: 0755
 
@@ -151,7 +151,7 @@
   # Add a webhook
   - name: Jenkins webhook for deploy
     uri:
-      url: https://api.github.com/repos/rgsx/j2_deploy/hooks
+      url: https://{{ url_for_hooks }}
       method: post
       headers:
         Authorization: "token {{ github_token }}"

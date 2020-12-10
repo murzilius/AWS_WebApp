@@ -17,7 +17,7 @@ instance_tags = ["Web1", "Web2"]
     "MYSQL_ROOT_PASSWORD"="admin" 
     "MYSQL_PASSWORD"="admin"
     "MYSQL_USER"="wordpress" 
-    "GITHUB_TOKEN"="3092f7a221cf8a6c9f09f1724e36560ed00a7955"
+    "GITHUB_TOKEN"="11b7191ab18d0324f888afbc1fbd35f9df1d33db"
     "GITHUB_REPO_NAME"="AWS_WebApp"
     "GITHUB_REPO_PATH"="github.com/murzilius/AWS_WebApp"} 
 
