@@ -11,7 +11,7 @@ cd /home/ubuntu/${GITHUB_REPO_NAME}/
 %{ for EnvVARS_key, EnvVARS_value in EnvVARS }
 echo "export ${EnvVARS_key}='${EnvVARS_value}'" >> /home/ubuntu/${GITHUB_REPO_NAME}/deploy.sh
 %{ endfor ~}
-echo "ansible-playbook -i hosts test.yml >> ansible.log" >> /home/ubuntu/${GITHUB_REPO_NAME}/deploy.sh
+echo "ansible-playbook -i hosts playbook.yml >> ansible.log" >> /home/ubuntu/${GITHUB_REPO_NAME}/deploy.sh
 chmode -x /home/ubuntu/${GITHUB_REPO_NAME}/deploy.sh
 cd /home/ubuntu/${GITHUB_REPO_NAME}/ 
 git init
