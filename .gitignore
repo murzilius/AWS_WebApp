@@ -1,7 +1,7 @@
 /db/*
 *lock*
 #*.tmpl
-#*.tfvars
+*.tfvars
 *.tfstate
 *.backup
 /.terraform
