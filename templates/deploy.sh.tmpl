@@ -3,7 +3,6 @@ sudo add-apt-repository -y ppa:ansible/ansible
 sudo apt update
 sudo apt install -y ansible
 sudo apt install -y mc
-chmod 777 hosts
 chmod 600 /home/ubuntu/.ssh/id_rsa
 chown ubuntu /home/ubuntu/.ssh/id_rsa
 mkdir /home/ubuntu/${GITHUB_REPO_NAME}   
@@ -13,7 +12,7 @@ cd /home/ubuntu/${GITHUB_REPO_NAME}/
 echo "export ${EnvVARS_key}='${EnvVARS_value}'" >> /home/ubuntu/${GITHUB_REPO_NAME}/deploy.sh
 %{ endfor ~}
 echo "ansible-playbook -i hosts test.yml >> ansible.log" >> /home/ubuntu/${GITHUB_REPO_NAME}/deploy.sh
-chown -x /home/ubuntu/${GITHUB_REPO_NAME}/deploy.sh
+chmode -x /home/ubuntu/${GITHUB_REPO_NAME}/deploy.sh
 cd /home/ubuntu/${GITHUB_REPO_NAME}/ 
 git init
 git remote add ${GITHUB_REPO_NAME} https://${GITHUB_REPO_PATH}
