@@ -15,16 +15,7 @@
       name: "{{ item }}"
       state: present
       update_cache: yes
-    loop:
-      - openjdk-8-jdk
-      - mc
-      - git
-      - apt-transport-https 
-      - ca-certificates 
-      - curl 
-      - gnupg-agent 
-      - software-properties-common
-    when: ansible_os_family == 'Debian'
+      with_items: "{{ packages }}"
 #create log to check vars
   - name: "Date addition"
     shell: date >> check.txt
