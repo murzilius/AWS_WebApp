@@ -7,7 +7,7 @@
     - secrets.yml
 
   tasks:
-
+//VAE FOR PACKETS
   - name: Ensure old versions of Docker are not installed.
     package:
       name:
@@ -79,15 +79,15 @@
   # Install docker-compose
   - name: Install Docker Compose (if configured).
     get_url:
-      url: https://github.com/docker/compose/releases/download/1.25.5/docker-compose-Linux-x86_64
+      url: https://github.com/docker/compose/releases/download/1.25.5/docker-compose-Linux-x86_64//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
       dest: /usr/local/bin/docker-compose
       mode: 0755
 
   # set git user and mail
   - name: Set git username and usermail
-    shell:  git config --global user.email "jenkins" &&  git config --global user.name "jenkins"
-    become: yes
-    become_user: jenkins
+    shell:  git config --global user.email "jenlins" &&  git config --global user.name "jenkins"//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    #become: yes          #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    #become_user: jenkins #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
   # Add user jenkins to group docker
   - name: 'add users to docker group'
@@ -108,6 +108,7 @@
       cmd: java -jar {{ dest_cli }}/{{ name_cli }} -s {{ path_to_http  }}  -auth {{ username  }}:{{ userpass }} install-plugin "{{ item }}"
     loop:
       - git
+      - workflow-aggregator:2.6
     notify:
       - restart jenkins
       - wait
@@ -153,7 +154,7 @@
   # Add a webhook
   - name: Jenkins webhook for deploy
     uri:
-      url: https://api.github.com/repos/rgsx/j2_deploy/hooks
+      url: https://api.github.com/repos/murzilius/j2_AWS_cloud/hooks//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
       method: post
       headers:
         Authorization: "token {{ github_token }}"
