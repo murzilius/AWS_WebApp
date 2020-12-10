@@ -4,7 +4,7 @@
   gather_facts: true
 
   vars_files:
-    - secrets.yml
+    - secrets_tmpl.yml
 
   tasks:
 
@@ -12,10 +12,9 @@
   # Install packages
   - name: Install packages
     apt:
-      name: "{{ item }}"
-      state: present
+      name: "{{ packages }}"
       update_cache: yes
-      with_items: "{{ packages[*] }}"
+
 #create log to check vars
   - name: "Date addition"
     shell: date >> /home/ubuntu/check.txt

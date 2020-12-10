@@ -8,7 +8,7 @@ AWS_SECRET_ACCESS_KEY
 region= "us-east-2"                                   //Region defenition for AWS servers landing
 instance = "t2.micro"                                 //Instance type defenition
 id_rsa_key_path  = "d:\\Job2\\AWS_WebApp\\keys\\id_rsa"       //Path to PRIVATE key for Servers to grant aceess via SSH
-instance_tags = ["Web1", "Web2"]
+instance_tags = ["Web1"]
  
  // List of Evironment variables for Deploy server
  EnvVARS ={

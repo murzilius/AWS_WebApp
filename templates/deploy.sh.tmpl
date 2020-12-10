@@ -24,6 +24,7 @@ echo "ansible_ssh_common_args='-o StrictHostKeyChecking=no'" >> /home/ubuntu/${G
 echo "[srv]" >> /home/ubuntu/${GITHUB_REPO_NAME}/hosts
 echo "${public_ip_for_Web}" >> /home/ubuntu/${GITHUB_REPO_NAME}/hosts
 cd /home/ubuntu/${GITHUB_REPO_NAME}/
+chmod 777 /home/ubuntu/${GITHUB_REPO_NAME}
 sh deploy.sh
 
 
