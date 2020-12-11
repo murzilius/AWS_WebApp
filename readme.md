@@ -1,14 +1,16 @@
-This repository is provide deploying of Wordpress CMS to amount of Web Servers in Amazon AWS cloud  
+This repository is used for deploying of Wordpress CMS to amount of Web Servers in Amazon AWS cloud  
 The code is realize solution as you see below  
+  
+  
 ![GitHub Logo](/images/AWS.jpg)!
 
-Used tools:  
-1. Terraform - used for communication to AWS cloud and generating nessessary infrastructure  
-2. Ansible - used for Web Servers Provisioning  
-3. Jenkins - used for automate installing latest Wordpress version  
-4. Docker (Docker-compose) - used for isolate nginx, mysql, and PHP-FPM services  
+## Used tools:  
+1. Terraform - was used for communication to AWS cloud and generating nessessary infrastructure  
+2. Ansible - was used for Web Servers Provisioning  
+3. Jenkins - was used for installing latest Wordpress version  
+4. Docker (Docker-compose) - was used for isolate nginx, mysql, and PHP-FPM services  
 
-To apply the solution you must:  
+## To apply the solution you must:  
 * First of all define ENVIRONMENT variables in your OS to get access to AWS cloud  
 * The variables should be named as:  
 AWS_ACCESS_KEY_ID  
