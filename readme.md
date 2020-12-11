@@ -1,11 +1,10 @@
 This repository is provide deploying of Wordpress CMS to amount of Web Servers in Amazon AWS cloud  
-Teh code is realize solution as you see below  
-![GitHub Logo](/images/AWS.jpg)
-Format: ![Alt Text]("Error")
+The code is realize solution as you see below  
+![GitHub Logo](/images/AWS.jpg)!
 
-Using tools:  
+Used tools:  
 1. Terraform - used for communication to AWS cloud and generating nessessary infrastructure  
-2. Asible - used for Web Servers Provisioning  
+2. Ansible - used for Web Servers Provisioning  
 3. Jenkins - used for automate installing latest Wordpress version  
 4. Docker (Docker-compose) - used for isolate nginx, mysql, and PHP-FPM services  
 
@@ -16,5 +15,8 @@ AWS_ACCESS_KEY_ID
 AWS_SECRET_ACCESS_KEY  
 * Rename file `\templates\terraform.tfvars.templ` to `terraform.tfvars` and put it into projects root directory  
 * Edit `terraform.tfvars` according to your needs. All defined variables described in comments  
-* Edit Asible config file `settings.yml` according to your needs. All defined variables described in comments
+* Edit Ansible config file `settings.yml` according to your needs. All defined variables described in comments
+* Initialize terraform project from root directory via `terraform init` command  
+* Apply terraform infrastructure via `terraform apply`  
+
 
