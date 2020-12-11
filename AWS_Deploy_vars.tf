@@ -11,7 +11,7 @@ variable "instance" {
   description = "Instance type defenition"
 }
 
-//Path for DEPLOY Server PRIVATE KEY to access WEB servers via SSH
+//Path for DEPLOY Server PRIVATE KEY to access WEB servers via SSH key should be named id_rsa
 variable "id_rsa_key_path" {
   type    = string
 }
