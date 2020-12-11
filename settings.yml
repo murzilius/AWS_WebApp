@@ -38,7 +38,7 @@
     job_file_update: update.job.xml
     scm_cron_update: '*/60 * * * *'
     scm_cron_deploy: '*/5 * * * *'
-    token_remote_deploy: ''
+    token_remote_deploy: 'AWS_WebApp'
     name_cli: jenkins-cli.jar
     path_to_cli: http://localhost:8080/jnlpJars/{{ name_cli }}
     path_to_http: http://localhost:8080
