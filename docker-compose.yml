@@ -31,8 +31,8 @@ services:
 #      - ./wordpress:/var/www/html
 
   webserver:
-    depends_on:
-      - wordpress
+#    depends_on:
+#      - wordpress
     image: nginx
     container_name: webserver
   #  restart: unless-stopped
