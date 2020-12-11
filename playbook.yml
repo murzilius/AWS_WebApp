@@ -193,7 +193,7 @@
       state: restarted
 
   # Wait for restarting Jenkins
-  - name: wait 
+  - name: wait
     uri:
       url: "http://localhost:8080/jnlpJars/jenkins-cli.jar"
       status_code: 200

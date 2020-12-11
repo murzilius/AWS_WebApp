@@ -30,17 +30,17 @@ services:
 #    volumes:
 #      - ./wordpress:/var/www/html
 
-#  webserver:
-#    depends_on:
-#      - wordpress
-#    image: nginx
-#    container_name: webserver
-#  #  restart: unless-stopped
-#    ports:
-#      - "80:80"
-#    volumes:
-#      - ./wordpress:/var/www/html
-#      - ./nginx-conf:/etc/nginx/conf.d
+  webserver:
+    depends_on:
+      - wordpress
+    image: nginx
+    container_name: webserver
+  #  restart: unless-stopped
+    ports:
+      - "80:80"
+    volumes:
+      - ./wordpress:/var/www/html
+      - ./nginx-conf:/etc/nginx/conf.d
 
   adminer:
     image: adminer
