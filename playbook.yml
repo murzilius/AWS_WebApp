@@ -147,7 +147,7 @@
           - push
           - pull_request
         config:
-          url: http://{{ username }}:{{ userpass }}@{{ ansible_facts['nodename'] }}:8080/job/{{ job_workspace_name_deploy }}/build?token={{ token_remote_deploy }}
+          url: http://{{ username }}:{{ userpass }}@{{ hostvars[inventory_hostname]['ansible_env'].SSH_CONNECTION.split(' ')[2] }}:8080/job/{{ job_workspace_name_deploy }}/build?token={{ token_remote_deploy }}
       status_code: 200,201
       body_format: json
  
