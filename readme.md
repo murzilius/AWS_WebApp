@@ -12,7 +12,7 @@ To apply the solution you must:
 * The variables should be named as:  
 AWS_ACCESS_KEY_ID  
 AWS_SECRET_ACCESS_KEY  
-* Rename file `\templates\terraform.tfvars.templ` to `terraform.templ` and put it into projects root directory  
-* Edit `terraform.tfvars.templ` according to your needs. All defined variables described in comments  
+* Rename file `\templates\terraform.tfvars.templ` to `terraform.tfvars` and put it into projects root directory  
+* Edit `terraform.tfvars.tfvars` according to your needs. All defined variables described in comments  
 * Edit Asible config file `settings.yml` according to your needs.
 
