@@ -1,6 +1,3 @@
-body {
-    font-size: 80% !important;
-}
 This repository is provide deploying of Wordpress CMS to amount of Web Servers in Amazon AWS cloud  
 Teh code is realize solution as you see below  
 THERE MUST BE SCEMATIC SOLUTION
