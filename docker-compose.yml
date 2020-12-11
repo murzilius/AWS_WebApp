@@ -15,11 +15,11 @@ services:
 #      - ./db:/var/lib/mysql
     command: '--default-authentication-plugin=mysql_native_password'
 
-  wordpress:
-    depends_on:
-      - db
-    image: crunchgeek/php-fpm:7.3
-    container_name: wordpress
+#  wordpress:
+#    depends_on:
+#      - db
+#    image: crunchgeek/php-fpm:7.3
+#    container_name: wordpress
   #  restart: unless-stopped
 #    env_file: .env
 #    environment:
@@ -27,20 +27,20 @@ services:
 #      - WORDPRESS_DB_USER=$MYSQL_USER
 #      - WORDPRESS_DB_PASSWORD=$MYSQL_PASSWORD
 #      - WORDPRESS_DB_NAME=wordpress
-    volumes:
-      - ./wordpress:/var/www/html
-
-#  webserver:
-#    depends_on:
-#      - wordpress
-#    image: nginx
-#    container_name: webserver
-#  #  restart: unless-stopped
-#    ports:
-#      - "80:80"
 #    volumes:
 #      - ./wordpress:/var/www/html
-#      - ./nginx-conf:/etc/nginx/conf.d
+
+  webserver:
+    depends_on:
+      - wordpress
+    image: nginx
+    container_name: webserver
+  #  restart: unless-stopped
+    ports:
+      - "80:80"
+    volumes:
+      - ./wordpress:/var/www/html
+      - ./nginx-conf:/etc/nginx/conf.d
 
   adminer:
     image: adminer
