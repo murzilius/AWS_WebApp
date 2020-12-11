@@ -2,18 +2,18 @@ version: '3'
 
 services:
 
-  db:
-    image: mysql
-    container_name: db
-   # restart: unless-stopped
+#  db:
+#    image: mysql
+#    container_name: db
+#   # restart: unless-stopped
 #    env_file: .env
-    environment:
-      - MYSQL_ROOT_PASSWORD=admin
-      - MYSQL_USER=wordpress
-      - MYSQL_DATABASE=wordpress
+#    environment:
+#      - MYSQL_ROOT_PASSWORD=admin
+#      - MYSQL_USER=wordpress
+#      - MYSQL_DATABASE=wordpress
 #    volumes:
 #      - ./db:/var/lib/mysql
-    command: '--default-authentication-plugin=mysql_native_password'
+#    command: '--default-authentication-plugin=mysql_native_password'
 
 #  wordpress:
 #    depends_on:
