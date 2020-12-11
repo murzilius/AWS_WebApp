@@ -1,9 +1,9 @@
-body {
-    font-size: 80% !important;
-}
+
 This repository is provide deploying of Wordpress CMS to amount of Web Servers in Amazon AWS cloud  
 Teh code is realize solution as you see below  
-THERE MUST BE SCEMATIC SOLUTION
+![GitHub Logo](/images/AWS.jpg)
+Format: ![Alt Text]("Error")
+
 Using tools:  
 1. Terraform - used for communication to AWS cloud and generating nessessary infrastructure  
 2. Asible - used for Web Servers Provisioning  
