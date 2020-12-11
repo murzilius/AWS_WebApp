@@ -133,12 +133,6 @@
       - .env
       - wp-config.php
   
-#Discover Public IP
-  - name: Find my public ip
-       uri:
-        url: http://ifconfig.me/ip
-       return_content: yes
-       register: ip_response
 
 # Add a webhook
   - name: Jenkins webhook for deploy
@@ -154,7 +148,7 @@
           - push
           - pull_request
         config:
-          url: http://{{ username }}:{{ userpass }}@{{ip_response}}:8080/job/{{ job_workspace_name_deploy }}/build?token={{ token_remote_deploy }}
+          url: http://{{ username }}:{{ userpass }}@{{inventory_hostname}}:8080/job/{{ job_workspace_name_deploy }}/build?token={{ token_remote_deploy }}
       status_code: 200,201
       body_format: json
  
