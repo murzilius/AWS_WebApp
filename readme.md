@@ -1,4 +1,3 @@
-
 This repository is provide deploying of Wordpress CMS to amount of Web Servers in Amazon AWS cloud  
 Teh code is realize solution as you see below  
 ![GitHub Logo](/images/AWS.jpg)
